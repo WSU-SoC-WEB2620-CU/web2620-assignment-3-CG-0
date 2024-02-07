@@ -1,1 +1,255 @@
 // Your styles go here
+
+/* Overall Styling */
+html {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    width: 100%;
+}
+
+*, 
+::before, 
+::after {
+    box-sizing: inherit;
+}
+
+/* CSS Grid Layout */
+body {
+    display: grid;
+    grid-template-columns: 3fr 1fr 3fr; 
+    gap: 5px;
+    grid-template-areas:
+    "head head head"
+    "tL1 tL1 tL1"
+    "tL2 tL2 tL2"
+    "tL3 tL3 tL3"
+    "tL4 tL4 tL4"
+    "tL5 tL5 tL5"
+    "bigBox bigBox bigBox"
+    "bL1 bL1 lBox"
+    "bL2 bL2 lBox"
+    "bL3 bL3 lBox"
+    "bL4 bL4 lBox"
+    "foot foot foot";
+}
+
+/* Assigning grid-area to header */
+.header {
+    grid-area: head;
+}
+
+/* Assigning grid-area to all the topLines */
+.topLine1 {
+    grid-area: tL1;
+}
+
+.topLine2 {
+    grid-area: tL2;
+}
+
+.topLine3 {
+    grid-area: tL3;
+}
+
+.topLine4 {
+    grid-area: tL4;
+}
+
+.topLine5 {
+    grid-area: tL5;
+}
+
+/* Shared styling for all the topLines */
+.topLine1,
+.topLine2,
+.topLine3,
+.topLine4,
+.topLine5 {
+    background-color: #2C2773;
+    height: 18px;
+}
+
+/* bigBox Styling */
+.bigBox {
+    grid-area: bigBox;
+    background-color: #82409C;
+    height: 200px;
+    margin-bottom: 4px;
+}
+
+/* littleBox Styling*/
+.littleBox {
+    grid-area: lBox;
+    background-color: #82409C;
+}
+
+/* Assigning grid-area to all the boxLines */
+.boxLine1 {
+    grid-area: bL1;
+}
+
+.boxLine2 {
+    grid-area: bL2;
+}
+
+.boxLine3 {
+    grid-area: bL3;
+}
+
+.boxLine4 {
+    grid-area: bL4;
+}
+
+/* Shared styling for all the boxLines */
+.boxLine1,
+.boxLine2,
+.boxLine3,
+.boxLine4 {
+    background-color: #2C2773;
+    height: 55px;
+}
+
+/* Shared styling for boxLine2 - 4 */
+.boxLine2,
+.boxLine3,
+.boxLine4 {
+    margin-top: 3px;
+}
+
+/* Assigning grid-area and styling to footer */
+.footer {
+    grid-area: foot;
+    margin-top: 4px;
+}
+
+/* Shared styling for Header & Footer */
+.header,
+.footer {
+    background-color: #82409C;
+    height: 40px;
+}
+
+/* On Tablets */
+@media all and (min-width: 500px) {
+    body {
+        grid-template-columns: 3fr repeat(3, 1fr) repeat(3, 1fr) 3fr 3fr;
+        gap: 10px;
+        grid-template-areas:
+        "head head head head head head head head head"
+        "tL1 tL2 tL2 tL2 tL3 tL3 tL3 tL4 tL5"
+        "bigBox bigBox bigBox bigBox bigBox bigBox bigBox bigBox bigBox"
+        "bL1 bL1 bL2 bL2 bL2 bL2 lBox lBox lBox"
+        "bL3 bL3 bL4 bL4 bL4 bL4 lBox lBox lBox"
+        "foot foot foot foot foot foot foot foot foot";
+    }
+
+    .header,
+    .footer {
+        height: 60px;
+    }
+
+    .topLine1,
+    .topLine2,
+    .topLine3,
+    .topLine4,
+    .topLine5 {
+        height: 40px;
+    }
+
+    .bigBox {
+        height: 430px;
+        margin-bottom: 0px;
+    }
+
+    .boxLine1,
+    .boxLine2,
+    .boxLine3,
+    .boxLine4 {
+        height: 62px;
+    }
+
+    .boxLine2,
+    .boxLine3,
+    .boxLine4,
+    .footer {
+        margin-top: 0px;
+    }
+}
+
+/* On Desktops */ 
+@media all and (min-width: 800px) {
+    body {
+        grid-template-columns: 8fr 8fr 5fr repeat(3, 1fr) 6fr repeat(2, 1fr) 8fr;
+        gap: 22px;
+        grid-template-areas:
+        "head head head head head head head head head head"
+        "tL1 tL2 tL3 tL3 tL3 tL3 tL4 tL4 tL4 tL5"
+        "bigBox bigBox bigBox bigBox bigBox lBox lBox lBox lBox lBox"
+        "bigBox bigBox bigBox bigBox bigBox bL1 bL1 bL1 bL2 bL2"
+        "bigBox bigBox bigBox bigBox bigBox bL3 bL3 bL3 bL4 bL4"
+        "foot foot foot foot foot foot foot foot foot foot";
+    }
+
+    .header,
+    .footer {
+        height: 80px;
+    }
+
+    .topLine1,
+    .topLine2,
+    .topLine3,
+    .topLine4,
+    .topLine5 {
+        height: 45px;
+    }
+
+    .topLine1 {
+        margin-right: 18px;
+    }
+
+    .topLine2 {
+        margin-left: 18px;
+    }
+
+    .topLine3 {
+        margin: 0px 36px 0px;
+    }
+
+    .topLine4 {
+        margin-right: 36px;
+    }
+
+    .bigBox {
+        height: 100%;
+        margin-bottom: 0px;
+    }
+
+    .littleBox {
+        height: 200px;
+    }
+
+    .boxLine1,
+    .boxLine2,
+    .boxLine3,
+    .boxLine4 {
+        height: 77px;
+    }
+
+    .boxLine1,
+    .boxLine3 {
+        margin-right: 4px;
+    }
+
+    .boxLine2,
+    .boxLine4 {
+        margin-left: 4px;
+    }
+
+    .boxLine2,
+    .boxLine3,
+    .boxLine4,
+    .footer {
+        margin-top: 0px;
+    }
+}
